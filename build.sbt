@@ -24,7 +24,7 @@ val btVersion: String = Try(ConfigFactory.load.getString("version")).fold(_ => "
 val dependencies: Seq[ModuleID] = Seq(
     "ch.qos.logback"          % "logback-core"       % "1.2.3",
     "ch.qos.logback"          % "logback-classic"    % "1.2.3",
-    "com.typesafe"            % "config"             % "1.3.4",
+    "com.typesafe"            % "config"             % "1.4.0",
     "commons-codec"           % "commons-codec"      % "1.13",
     "com.typesafe.play"      %% "play-json"          % "2.7.4",
     "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3"  % Test
@@ -33,7 +33,7 @@ val dependencies: Seq[ModuleID] = Seq(
 lazy val library = Project(libraryName, file("."))
   .settings(
     version                              :=  btVersion,
-    scalaVersion                         :=  "2.13.0",
+    scalaVersion                         :=  "2.13.1",
     organization                         :=  "com.cjww-dev.libs",
     resolvers                            +=  "cjww-dev" at "https://dl.bintray.com/cjww-development/releases",
     libraryDependencies                  ++= dependencies,

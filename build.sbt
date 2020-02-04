@@ -25,9 +25,9 @@ val dependencies: Seq[ModuleID] = Seq(
     "ch.qos.logback"          % "logback-core"       % "1.2.3",
     "ch.qos.logback"          % "logback-classic"    % "1.2.3",
     "com.typesafe"            % "config"             % "1.4.0",
-    "commons-codec"           % "commons-codec"      % "1.13",
-    "com.typesafe.play"      %% "play-json"          % "2.7.4",
-    "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3"  % Test
+    "commons-codec"           % "commons-codec"      % "1.14",
+    "com.typesafe.play"      %% "play-json"          % "2.8.1",
+    "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0"  % Test
 )
 
 lazy val library = Project(libraryName, file("."))

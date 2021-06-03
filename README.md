@@ -12,13 +12,13 @@ To utilise this library add this to your sbt build file
 Obfuscation and de-obfuscation provide functionality to encrypt type `T` to a `String` and decrypt `String` into type `T`.
 
 ```scala
-    import com.cjwwdev.security.obfuscation.Obfuscation
+    import dev.cjww.security.obfuscation.Obfuscation
     
     val encString: String = Obfuscation.encrypt(616)
 ```
 
 ```scala
-    import com.cjwwdev.security.deobfuscation.DeObfuscation
+    import dev.cjww.security.deobfuscation.DeObfuscation
     
     val decType: Boolean = DeObfuscation.decrypt[Boolean]("some-padded-string")
 ```

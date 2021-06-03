@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-addSbtPlugin("org.scoverage"     %  "sbt-scoverage"         % "1.8.2")
-addSbtPlugin("org.scalastyle"    %% "scalastyle-sbt-plugin" % "1.0.0")
-addSbtPlugin("com.timushev.sbt"  %  "sbt-updates"           % "0.5.3")
-addSbtPlugin("com.codecommit"    %  "sbt-github-packages"   % "0.5.3")
-addSbtPlugin("ch.epfl.scala"     %  "sbt-scalafix"          % "0.9.29")
+package dev.cjww.security
+
+import org.slf4j.{Logger, LoggerFactory}
+
+private[security] trait Logging {
+  val logger: Logger = LoggerFactory.getLogger(getClass)
+}

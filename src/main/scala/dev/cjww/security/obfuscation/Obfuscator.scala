@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
-addSbtPlugin("org.scoverage"     %  "sbt-scoverage"         % "1.8.2")
-addSbtPlugin("org.scalastyle"    %% "scalastyle-sbt-plugin" % "1.0.0")
-addSbtPlugin("com.timushev.sbt"  %  "sbt-updates"           % "0.5.3")
-addSbtPlugin("com.codecommit"    %  "sbt-github-packages"   % "0.5.3")
-addSbtPlugin("ch.epfl.scala"     %  "sbt-scalafix"          % "0.9.29")
+package dev.cjww.security.obfuscation
+
+import scala.annotation.implicitNotFound
+
+@implicitNotFound("No Obfuscator found for type ${T}. Try to implement an implicit Obfuscator for type ${T}")
+trait Obfuscator[T] {
+  def encrypt(value: T): String
+}

@@ -14,8 +14,17 @@
  * limitations under the License.
  */
 
-addSbtPlugin("org.scoverage"     %  "sbt-scoverage"         % "1.8.2")
-addSbtPlugin("org.scalastyle"    %% "scalastyle-sbt-plugin" % "1.0.0")
-addSbtPlugin("com.timushev.sbt"  %  "sbt-updates"           % "0.5.3")
-addSbtPlugin("com.codecommit"    %  "sbt-github-packages"   % "0.5.3")
-addSbtPlugin("ch.epfl.scala"     %  "sbt-scalafix"          % "0.9.29")
+package dev.cjww.security
+
+import scala.reflect.ClassTag
+import scala.util.control.NoStackTrace
+
+case class DecryptionError(msg: String, locale: String) extends NoStackTrace with Logging {
+  def logError[T](implicit tag: ClassTag[T]): Unit = {
+    logger.error(s"[$locale] - the input string has failed decryption into type $tag - reason: $msg")
+  }
+
+  def logValidateError[T](implicit tag: ClassTag[T]): Unit = {
+    logger.error(s"[$locale] - the json could not be read into type $tag - reason: $msg")
+  }
+}
